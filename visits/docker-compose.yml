@@ -1,0 +1,13 @@
+# docker compose is to write all cli commands in one place
+
+version: "3"
+
+# services contains different containers
+services:
+  redis-server: 
+    image: "redis"
+  node-app:
+    restart: always  # restart on failure
+    build: .
+    ports: 
+      - "4001:8081"
